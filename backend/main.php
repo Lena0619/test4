@@ -33,3 +33,4 @@
     }
   ?>
 </table>
+<div class="ct"><button onclick="lof('index.php')">返回</button></div>
