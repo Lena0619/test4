@@ -5,6 +5,7 @@ $Bottom =new DB('bottom');
 $Mem =new DB('mem');
 $Admin =new DB('admin');
 $Type =new DB('type');
+$Goods =new DB('goods');
 
 
 class DB{
@@ -93,6 +94,7 @@ class DB{
             foreach($arg as $key => $value){
                 $tmp[]=sprintf("`%s`='%s'",$key,$value);
             }
+
             $sql="update  $this->table set ".implode(",",$tmp)." where `id`='{$arg['id']}'";
         }else{
             //insert

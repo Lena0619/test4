@@ -1,0 +1,16 @@
+<?php include_once "../base.php";
+
+if(!empty($_FILES['img']['tmp_name'])){      //圖片的存檔
+  $_POST['img']=$_FILES['img']['name'];
+}
+
+
+$_POST['num']=rand(100000,999999);     //流水號編碼(自己決定)
+$_POST['sh']=1;
+
+
+$Goods->save($_POST);
+
+to("../backend.php?do=th");
+
+?>
