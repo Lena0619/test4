@@ -56,6 +56,7 @@
 </table>
 
 <hr>
+<!-- 商品管理 -->
 <h2 class="ct">商品管理</h2>
 <div class="ct"><button onclick="lof('?do=add_goods')">新增商品</button></div>
 
@@ -65,7 +66,7 @@ function edit(id,name){
   // console.log(result)
   if(result!=null){
     $.post('api/edit_type.php',{id,result},function(){
-      location.reload();                                    //會重整頁面
+      // location.reload();   會重整頁面(效能比下面的方式差)
       $("#t"+id).html(result);                              //前後端分離(不會reload)(資料傳輸流量會比較少效能較好)
     })
   }
