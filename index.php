@@ -1,5 +1,14 @@
 <?php
 include_once "base.php";
+if(isset($_GET['do']) && $_GET['do']=='buycart'){
+if(isset($_GET['goods'])){
+        $_SESSION['cart'][$_GET['goods']]=$_GET['qt'];
+      }
+      if(empty($_SESSION['mem'])){
+        to("?do=login");
+        exit();
+      }
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
